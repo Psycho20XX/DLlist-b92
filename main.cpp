@@ -1,5 +1,5 @@
 #define CATCH_CONFIG_MAIN
-#include "catch.hpp"
+#include "Catch.hpp"
 
 #include "DLlist.h"
 
@@ -32,7 +32,18 @@ TEST_CASE( "DLlist", "[DLlist]" ) {
     REQUIRE(L.getSize() == 5);
     REQUIRE(L.at(0) == 90);
     REQUIRE(L.at(1) == 88);
-    REQUIRE(L.at(1) == 88);
+    REQUIRE(L.at(2) == 6);
+    REQUIRE(L.at(3) == 9);
+    REQUIRE(L.at(4) == 42);
+
+    L.reverse();
+
+    REQUIRE(L.getSize() == 5);
+    REQUIRE(L.at(0) == 42);
+    REQUIRE(L.at(1) == 9);
+    REQUIRE(L.at(2) == 6);
+    REQUIRE(L.at(3) == 88);
+    REQUIRE(L.at(4) == 90);
 
     /**
     // List R is going to have (1,2,3,4,5)

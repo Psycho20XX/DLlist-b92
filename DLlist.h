@@ -33,6 +33,7 @@ public:
     int getSize() const;
     ~DLlist();
     DNode *search(int key) const;
+    void reverse();
 
 };
 

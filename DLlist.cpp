@@ -69,3 +69,30 @@ DNode* DLlist::search(int key) const {
     return p;
 }
 
+void DLlist::reverse() {
+    DNode *Nh=NULL; DNode *Nt=NULL; DNode *p;
+    while(head != NULL){
+        p=head;
+        head=head->next;
+        if(head != NULL) head->prev=NULL;
+        p->next=Nh;
+        if(Nh == NULL) {
+            Nt = p;
+            Nt->next = Nh;
+            Nt->prev = Nh;
+            Nh = p;
+        }
+        if(Nh != NULL) {
+            Nh->prev = p;
+            p = Nh;
+            Nh = p;
+            Nh->prev = NULL;
+        }
+
+
+    }
+    head=Nh;
+    tail=Nt;
+
+}
+
